@@ -1,0 +1,36 @@
+{
+  "name": "space-dashboard-matrix84",
+  "version": "1.0.0",
+  "description": "Interactive Space Dashboard for Artemis II mission with bilingual support",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8080"
+  },
+  "keywords": [
+    "space",
+    "dashboard",
+    "artemis",
+    "nasa",
+    "bilingual",
+    "arabic",
+    "english",
+    "web",
+    "frontend"
+  ],
+  "author": "Matrix84",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "."
+  },
+  "homepage": "index.html",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 1%",
+    "not dead"
+  ]
+}

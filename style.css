@@ -36,11 +36,47 @@ body {
     width: 100%;
     height: 100%;
     z-index: -2;
-    background: radial-gradient(circle at 15% 20%, rgba(255,255,255,0.9) 2px, transparent 4px),
-                radial-gradient(circle at 70% 30%, rgba(200,230,255,0.8) 1.6px, transparent 3px),
-                radial-gradient(circle at 40% 75%, rgba(255,255,255,0.55) 1.2px, transparent 3px);
-    background-size: 120% 120%, 80% 80%, 150% 150%;
+    background-image:
+        radial-gradient(circle at 15% 20%, rgba(255,255,255,0.9) 2px, transparent 4px),
+        radial-gradient(circle at 70% 30%, rgba(200,230,255,0.8) 1.6px, transparent 3px),
+        radial-gradient(circle at 40% 75%, rgba(255,255,255,0.55) 1.2px, transparent 3px),
+        radial-gradient(circle at 85% 60%, rgba(255,255,255,0.7) 1px, transparent 2px),
+        radial-gradient(circle at 25% 80%, rgba(200,230,255,0.6) 1.8px, transparent 3.5px),
+        radial-gradient(circle at 60% 10%, rgba(255,255,255,0.8) 1.4px, transparent 2.8px),
+        radial-gradient(circle at 10% 50%, rgba(255,255,255,0.6) 1.3px, transparent 2.6px),
+        radial-gradient(circle at 90% 20%, rgba(200,230,255,0.5) 1.5px, transparent 3px),
+        radial-gradient(circle at 50% 90%, rgba(255,255,255,0.4) 1.1px, transparent 2.2px),
+        radial-gradient(circle at 30% 40%, rgba(255,255,255,0.8) 1.7px, transparent 3.4px),
+        radial-gradient(circle at 75% 85%, rgba(200,230,255,0.7) 1.2px, transparent 2.4px),
+        radial-gradient(circle at 5% 70%, rgba(255,255,255,0.5) 1.4px, transparent 2.8px),
+        radial-gradient(circle at 95% 45%, rgba(255,255,255,0.6) 1.6px, transparent 3.2px),
+        radial-gradient(circle at 45% 5%, rgba(200,230,255,0.4) 1.3px, transparent 2.6px),
+        radial-gradient(circle at 80% 95%, rgba(255,255,255,0.7) 1.5px, transparent 3px),
+        radial-gradient(circle at 20% 30%, rgba(255,255,255,0.5) 1.2px, transparent 2.4px),
+        radial-gradient(circle at 65% 55%, rgba(200,230,255,0.6) 1.4px, transparent 2.8px),
+        radial-gradient(circle at 35% 65%, rgba(255,255,255,0.7) 1.1px, transparent 2.2px),
+        radial-gradient(circle at 55% 25%, rgba(255,255,255,0.8) 1.6px, transparent 3.2px),
+        radial-gradient(circle at 12% 85%, rgba(200,230,255,0.4) 1.3px, transparent 2.6px),
+        radial-gradient(circle at 88% 75%, rgba(255,255,255,0.6) 1.5px, transparent 3px),
+        radial-gradient(circle at 42% 15%, rgba(255,255,255,0.5) 1.2px, transparent 2.4px),
+        radial-gradient(circle at 78% 40%, rgba(200,230,255,0.7) 1.4px, transparent 2.8px),
+        radial-gradient(circle at 28% 95%, rgba(255,255,255,0.4) 1.1px, transparent 2.2px),
+        radial-gradient(circle at 68% 80%, rgba(255,255,255,0.8) 1.7px, transparent 3.4px),
+        radial-gradient(circle at 8% 35%, rgba(200,230,255,0.5) 1.3px, transparent 2.6px),
+        radial-gradient(circle at 92% 55%, rgba(255,255,255,0.6) 1.5px, transparent 3px),
+        radial-gradient(circle at 48% 70%, rgba(255,255,255,0.7) 1.2px, transparent 2.4px),
+        radial-gradient(circle at 22% 60%, rgba(200,230,255,0.4) 1.4px, transparent 2.8px),
+        radial-gradient(circle at 72% 10%, rgba(255,255,255,0.5) 1.1px, transparent 2.2px);
+    background-size: 120% 120%, 80% 80%, 150% 150%, 100% 100%, 110% 110%, 90% 90%, 130% 130%, 95% 95%, 140% 140%, 85% 85%, 105% 105%, 125% 125%, 115% 115%, 135% 135%, 145% 145%, 125% 125%, 95% 95%, 135% 135%, 105% 105%, 115% 115%, 145% 145%, 85% 85%, 125% 125%, 95% 95%, 135% 135%, 105% 105%, 115% 115%, 145% 145%, 85% 85%, 125% 125%, 95% 95%;
+    background-repeat: no-repeat;
+    animation: twinkle 20s ease-in-out infinite alternate;
     pointer-events: none;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.8; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+    100% { opacity: 0.9; transform: scale(1); }
 }
 
 .container {
@@ -61,6 +97,28 @@ body {
     backdrop-filter: blur(10px);
     padding: 12px 14px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.header-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.lang-btn {
+    border-radius: 10px;
+    padding: 8px 12px;
+    border: none;
+    background: rgba(255,255,255,0.1);
+    color: #f5f7ff;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.lang-btn:hover {
+    background: rgba(255,255,255,0.2);
+    transform: scale(1.05);
 }
 
 .logo-row { display: flex; align-items: center; gap: 10px; }
