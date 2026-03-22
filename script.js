@@ -30,22 +30,7 @@ const translations = {
         deleteBtn: 'حذف',
         cancelBtn: 'إلغاء',
         confirmDelete: 'هل أنت متأكد من حذف هذا التعليق؟',
-        langBtn: 'EN',
-        astronomyHeading: 'محرك تحليل فلكي (Astronomy Decision Engine) 🌌',
-        astronomyDesc: 'أدخل رقم مقياس بورتل (Bortle Scale) من 1 إلى 9 لمعرفة ما يمكن رؤيته بالعين المجردة في سمائك.',
-        bortleLabel: 'رقم مقياس بورتل:',
-        bortleConfirmBtn: 'تأكيد',
-        darkSkyTitle: 'سماء مظلمة (Bortle 1-3)',
-        darkSkyDesc: 'يمكن رؤية:',
-        mediumSkyTitle: 'سماء متوسطة (Bortle 4-6)',
-        mediumSkyDesc: 'يمكن رؤية:',
-        lightSkyTitle: 'سماء ملوثة (Bortle 7-9)',
-        lightSkyDesc: 'يمكن رؤية:',
-        invalidBortle: 'يرجى إدخال رقم صحيح من 1 إلى 9',
-        aiHeading: 'مساعد الذكاء الاصطناعي الفضائي 🤖',
-        aiDesc: 'اسألني أي سؤال عن الفضاء والكون، وسأجيب عليك!',
-        chatPlaceholder: 'اكتب سؤالك هنا...',
-        chatSendBtn: 'إرسال'
+        langBtn: 'EN'
     },
     en: {
         title: 'Space Dashboard | Matrix84',
@@ -78,105 +63,7 @@ const translations = {
         deleteBtn: 'Delete',
         cancelBtn: 'Cancel',
         confirmDelete: 'Are you sure you want to delete this comment?',
-        langBtn: 'AR',
-        astronomyHeading: 'Astronomy Decision Engine 🌌',
-        astronomyDesc: 'Enter your Bortle Scale number (1-9) to see what you can observe with the naked eye in your sky.',
-        bortleLabel: 'Bortle Scale number:',
-        bortleConfirmBtn: 'Confirm',
-        darkSkyTitle: 'Dark Sky (Bortle 1-3)',
-        darkSkyDesc: 'You can see:',
-        mediumSkyTitle: 'Medium Sky (Bortle 4-6)',
-        mediumSkyDesc: 'You can see:',
-        lightSkyTitle: 'Light Polluted Sky (Bortle 7-9)',
-        lightSkyDesc: 'You can see:',
-        invalidBortle: 'Please enter a valid number from 1 to 9',
-        aiHeading: 'Space AI Assistant 🤖',
-        aiDesc: 'Ask me any question about space and the universe, and I\'ll answer!',
-        chatPlaceholder: 'Type your question here...',
-        chatSendBtn: 'Send'
-    }
-};
-
-function analyzeBortleScale(bortle) {
-    const lang = currentLang;
-    const t = translations[lang];
-    let category, title, desc, objects;
-
-    if (bortle >= 1 && bortle <= 3) {
-        category = 'dark';
-        title = t.darkSkyTitle;
-        desc = t.darkSkyDesc;
-        objects = astronomyData[lang].dark;
-    } else if (bortle >= 4 && bortle <= 6) {
-        category = 'medium';
-        title = t.mediumSkyTitle;
-        desc = t.mediumSkyDesc;
-        objects = astronomyData[lang].medium;
-    } else if (bortle >= 7 && bortle <= 9) {
-        category = 'light';
-        title = t.lightSkyTitle;
-        desc = t.lightSkyDesc;
-        objects = astronomyData[lang].light;
-    } else {
-        return `<div class="error-message">${t.invalidBortle}</div>`;
-    }
-
-    const cards = objects.map(obj => `
-        <div class="astro-card">
-            <div class="astro-icon">${obj.icon}</div>
-            <div class="astro-name">${obj.name}</div>
-        </div>
-    `).join('');
-
-    return `
-        <div class="result-section">
-            <h3 class="result-title">${title}</h3>
-            <p class="result-desc">${desc}</p>
-            <div class="astro-grid">
-                ${cards}
-            </div>
-        </div>
-    `;
-}
-
-const astronomyData = {
-    ar: {
-        dark: [
-            { name: 'ذراع مجرة درب التبانة', icon: '🌌' },
-            { name: 'مجرة أندروميدا', icon: '🌠' },
-            { name: 'سديم الجبار', icon: '💫' },
-            { name: 'تفاصيل دقيقة جداً', icon: '🔭' }
-        ],
-        medium: [
-            { name: 'المشتري', icon: '🪐' },
-            { name: 'زحل', icon: '🪐' },
-            { name: 'المريخ', icon: '🔴' },
-            { name: 'الثريا', icon: '⭐' }
-        ],
-        light: [
-            { name: 'القمر', icon: '🌙' },
-            { name: 'الزهرة', icon: '⭐' },
-            { name: 'ألمع النجوم', icon: '✨' }
-        ]
-    },
-    en: {
-        dark: [
-            { name: 'Milky Way arm', icon: '🌌' },
-            { name: 'Andromeda Galaxy', icon: '🌠' },
-            { name: 'Orion Nebula', icon: '💫' },
-            { name: 'Very fine details', icon: '🔭' }
-        ],
-        medium: [
-            { name: 'Jupiter', icon: '🪐' },
-            { name: 'Saturn', icon: '🪐' },
-            { name: 'Mars', icon: '🔴' },
-            { name: 'Pleiades', icon: '⭐' }
-        ],
-        light: [
-            { name: 'Moon', icon: '🌙' },
-            { name: 'Venus', icon: '⭐' },
-            { name: 'Brightest stars', icon: '✨' }
-        ]
+        langBtn: 'AR'
     }
 };
 
@@ -207,26 +94,13 @@ const textNodes = {
     commentName: document.getElementById('comment-name'),
     commentText: document.getElementById('comment-text'),
     submitComment: document.getElementById('submit-comment'),
-    langBtn: document.getElementById('lang-toggle'),
-    astronomyHeading: document.getElementById('astronomy-heading'),
-    astronomyDesc: document.getElementById('astronomy-desc'),
-    bortleLabel: document.getElementById('bortle-label'),
-    bortleConfirm: document.getElementById('bortle-confirm'),
-    aiHeading: document.getElementById('ai-heading'),
-    aiDesc: document.getElementById('ai-desc'),
-    chatInput: document.getElementById('chat-input'),
-    chatSend: document.getElementById('chat-send')
+    langBtn: document.getElementById('lang-toggle')
 };
 
 const storedLangKey = 'spaceDashboardLang';
 const storedLaunchDateKey = 'spaceDashboardLaunchDate';
 let currentLang = localStorage.getItem(storedLangKey) || 'ar';
 const intervalRef = { id: null };
-
-function initChat() {
-    chatMessages.innerHTML = '';
-    addMessage(aiResponses[currentLang].hello);
-}
 
 function applyLanguage(lang) {
     currentLang = lang;
@@ -263,17 +137,8 @@ function applyLanguage(lang) {
     textNodes.commentText.placeholder = translations[lang].commentPlaceholder;
     textNodes.submitComment.textContent = translations[lang].submitBtn;
     textNodes.langBtn.textContent = translations[lang].langBtn;
-    textNodes.astronomyHeading.textContent = translations[lang].astronomyHeading;
-    textNodes.astronomyDesc.textContent = translations[lang].astronomyDesc;
-    textNodes.bortleLabel.textContent = translations[lang].bortleLabel;
-    textNodes.bortleConfirm.textContent = translations[lang].bortleConfirmBtn;
-    textNodes.aiHeading.textContent = translations[lang].aiHeading;
-    textNodes.aiDesc.textContent = translations[lang].aiDesc;
-    textNodes.chatInput.placeholder = translations[lang].chatPlaceholder;
-    textNodes.chatSend.textContent = translations[lang].chatSendBtn;
 
     renderComments();
-    initChat();
 }
 
 function updateCountdown(targetDate) {
@@ -430,99 +295,8 @@ function cancelEdit() {
     document.getElementById('submit-comment').textContent = translations[currentLang].submitBtn;
 }
 
-// Astronomy Engine functionality
-const resultsContainer = document.getElementById('results-container');
-const bortleInput = document.getElementById('bortle-input');
-const bortleConfirm = document.getElementById('bortle-confirm');
-
-function renderBortleResult() {
-    const value = parseInt(bortleInput.value, 10);
-    if (!value || value < 1 || value > 9) {
-        resultsContainer.innerHTML = `<div class="error-message">${translations[currentLang].invalidBortle}</div>`;
-        return;
-    }
-    resultsContainer.innerHTML = analyzeBortleScale(value);
-}
-
-bortleConfirm.addEventListener('click', () => renderBortleResult());
-
-bortleInput.addEventListener('keyup', (e) => {
-    if (e.key === 'Enter') {
-        renderBortleResult();
-    }
-});
-
-// AI Assistant functionality
-const chatMessages = document.getElementById('chat-messages');
-const chatInput = document.getElementById('chat-input');
-const chatSend = document.getElementById('chat-send');
-
-const aiResponses = {
-    ar: {
-        default: 'عذراً، لم أفهم سؤالك. جرب سؤال آخر عن الفضاء!',
-        hello: 'مرحباً! أنا مساعدك الفضائي. اسألني عن النجوم، الكواكب، أو أي شيء في الكون.',
-        sun: 'الشمس هي نجم في مركز نظامنا الشمسي، وهي مصدر الطاقة للحياة على الأرض.',
-        moon: 'القمر هو قمر طبيعي للأرض، ويسبب المد والجزر.',
-        mars: 'المريخ هو الكوكب الأحمر، وهناك خطط لاستكشافه.',
-        stars: 'النجوم هي كرات من الغاز الساخن تتوهج بسبب الاندماج النووي.',
-        universe: 'الكون يتكون من المادة العادية، المادة المظلمة، والطاقة المظلمة.',
-        nasa: 'ناسا هي وكالة الفضاء الأمريكية، مسؤولة عن استكشاف الفضاء.',
-        space: 'الفضاء هو المنطقة خارج الغلاف الجوي للأرض.'
-    },
-    en: {
-        default: 'Sorry, I didn\'t understand your question. Try asking about space!',
-        hello: 'Hello! I\'m your space assistant. Ask me about stars, planets, or anything in the universe.',
-        sun: 'The Sun is a star at the center of our solar system, providing energy for life on Earth.',
-        moon: 'The Moon is Earth\'s natural satellite, causing tides.',
-        mars: 'Mars is the red planet, with plans for exploration.',
-        stars: 'Stars are hot gas spheres that glow due to nuclear fusion.',
-        universe: 'The universe consists of ordinary matter, dark matter, and dark energy.',
-        nasa: 'NASA is the American space agency responsible for space exploration.',
-        space: 'Space is the area beyond Earth\'s atmosphere.'
-    }
-};
-
-function getAIResponse(message, lang) {
-    const msg = message.toLowerCase();
-    const responses = aiResponses[lang];
-
-    if (msg.includes('مرحبا') || msg.includes('hello') || msg.includes('hi')) return responses.hello;
-    if (msg.includes('شمس') || msg.includes('sun')) return responses.sun;
-    if (msg.includes('قمر') || msg.includes('moon')) return responses.moon;
-    if (msg.includes('مريخ') || msg.includes('mars')) return responses.mars;
-    if (msg.includes('نجوم') || msg.includes('stars')) return responses.stars;
-    if (msg.includes('كون') || msg.includes('universe')) return responses.universe;
-    if (msg.includes('ناسا') || msg.includes('nasa')) return responses.nasa;
-    if (msg.includes('فضاء') || msg.includes('space')) return responses.space;
-
-    return responses.default;
-}
-
-function addMessage(text, isUser = false) {
-    const messageDiv = document.createElement('div');
-    messageDiv.className = `chat-message ${isUser ? 'user' : 'ai'}`;
-    messageDiv.textContent = text;
-    chatMessages.appendChild(messageDiv);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-}
-
-function sendMessage() {
-    const message = chatInput.value.trim();
-    if (!message) return;
-
-    addMessage(message, true);
-    chatInput.value = '';
-
-    setTimeout(() => {
-        const response = getAIResponse(message, currentLang);
-        addMessage(response);
-    }, 500);
-}
-
-chatSend.addEventListener('click', sendMessage);
-chatInput.addEventListener('keyup', (e) => {
-    if (e.key === 'Enter') sendMessage();
-});
+// Event listeners
+document.getElementById('comment-form').addEventListener('submit', (e) => {
     e.preventDefault();
     const name = document.getElementById('comment-name').value.trim();
     const text = document.getElementById('comment-text').value.trim();
@@ -554,11 +328,11 @@ chatInput.addEventListener('keyup', (e) => {
     document.getElementById('submit-comment').textContent = translations[currentLang].submitBtn;
     document.getElementById('cancel-edit').style.display = 'none';
     renderComments();
+});
 
+document.getElementById('cancel-edit').addEventListener('click', cancelEdit);
 
-    document.getElementById('cancel-edit').addEventListener('click', cancelEdit);
-
-    document.getElementById('lang-toggle').addEventListener('click', () => {
+document.getElementById('lang-toggle').addEventListener('click', () => {
     currentLang = currentLang === 'ar' ? 'en' : 'ar';
     applyLanguage(currentLang);
 });
