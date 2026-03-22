@@ -12,8 +12,6 @@
     <script src="script.js" defer></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6472628319392250"
      crossorigin="anonymous"></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6472628319392250"
-     crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="page-fade"></div>
@@ -69,6 +67,31 @@
 
             <h3 id="space-junk-section">4. قسم: خردة الفضاء (Space Junk) - الخطر القادم 🗑️</h3>
             <p id="space-junk-items"><strong id="flying-bullets-title">الرصاصات الطائرة</strong>: هناك أكثر من 130 مليون قطعة حطام (من براغي صغيرة إلى بقايا صواريخ) تدور حول الأرض بسرعة 28,000 كم/ساعة. في هذه السرعة، قطعة بحجم "حبة الحمص" تضرب بقوة قنبلة يدوية!، <strong id="kessler-syndrome-title">متلازمة كيسلر (Kessler Syndrome)</strong>: هي نظرية مرعبة تقول إن تصادماً واحداً في الفضاء قد يخلق آلاف الشظايا التي تصدم أقماراً أخرى، مما يغلق مدار الأرض تماماً ويحرمنا من الـ GPS والاتصالات للأبد، <strong id="space-cleaning-title">التنظيف الفضائي</strong>: هناك شركات بدأت تصمم "أقماراً مغناطيسية" أو "شباكاً عملاقة" لاصطياد هذه الخرده وإنزالها لتحترق في الغلاف الجوي.</p>
+        </section>
+
+        <section class="astronomy-engine" id="astronomy-engine">
+            <h2 id="astronomy-heading">محرك تحليل فلكي (Astronomy Decision Engine) 🌌</h2>
+            <p id="astronomy-desc">أدخل رقم مقياس بورتل (Bortle Scale) من 1 إلى 9 لمعرفة ما يمكن رؤيته بالعين المجردة في سمائك.</p>
+            <div class="engine-input">
+                <label for="bortle-input" id="bortle-label">رقم مقياس بورتل:</label>
+                <input type="number" id="bortle-input" min="1" max="9" placeholder="1-9" class="bortle-input">
+                <button id="bortle-confirm" class="bortle-confirm-btn">تأكيد</button>
+            </div>
+            <div id="results-container" class="results-container">
+                <!-- Results will be displayed here -->
+            </div>
+        </section>
+
+        <section class="ai-assistant" id="ai-assistant">
+            <h2 id="ai-heading">مساعد الذكاء الاصطناعي الفضائي 🤖</h2>
+            <p id="ai-desc">اسألني أي سؤال عن الفضاء والكون، وسأجيب عليك!</p>
+            <div class="chat-container">
+                <div id="chat-messages" class="chat-messages"></div>
+                <div class="chat-input-area">
+                    <input type="text" id="chat-input" placeholder="اكتب سؤالك هنا..." class="chat-input">
+                    <button id="chat-send" class="chat-send-btn">إرسال</button>
+                </div>
+            </div>
         </section>
 
         <section id="apollo-missions" style="background-color: #0d1117; color: white; padding: 30px; border-radius: 15px; font-family: sans-serif; text-align: center; margin-top: 20px;">

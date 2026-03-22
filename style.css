@@ -474,3 +474,284 @@ body {
     .time-box span { font-size: 1.3rem; }
     .card { text-align: start; }
 }
+
+/* Astronomy Engine Styles */
+.astronomy-engine {
+    background: rgba(11, 23, 57, 0.5);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.astronomy-engine h2 {
+    color: var(--electric);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.astronomy-engine p {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #c9d1d9;
+}
+
+.engine-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.engine-input label {
+    font-weight: 500;
+    color: var(--gold);
+}
+
+.bortle-input {
+    padding: 10px;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 8px;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    width: 100px;
+}
+
+.bortle-input:focus {
+    outline: none;
+    border-color: var(--electric);
+    box-shadow: 0 0 10px rgba(0,212,255,0.3);
+}
+
+.bortle-confirm-btn {
+    margin-top: 8px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #00d4ff, #4f9fff);
+    color: #0a0f23;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bortle-confirm-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(0,212,255,0.45);
+}
+
+.bortle-confirm-btn:active {
+    transform: translateY(0);
+}
+
+
+.results-container {
+    margin-top: 20px;
+}
+
+.result-section {
+    background: rgba(255,255,255,0.05);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.result-title {
+    color: var(--electric);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.result-desc {
+    color: #c9d1d9;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.astro-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.astro-card {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.astro-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,212,255,0.2);
+}
+
+.astro-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.astro-name {
+    color: white;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.error-message {
+    color: #ff6b6b;
+    text-align: center;
+    padding: 20px;
+    background: rgba(255,107,107,0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(255,107,107,0.3);
+}
+
+/* Responsive for Astronomy Engine */
+@media (max-width: 768px) {
+    .astronomy-engine {
+        padding: 15px;
+    }
+    
+    .astro-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 10px;
+    }
+    
+    .astro-card {
+        padding: 12px;
+    }
+    
+    .astro-icon {
+        font-size: 1.5rem;
+    }
+    
+    .astro-name {
+        font-size: 0.8rem;
+    }
+}
+
+/* AI Assistant Styles */
+.ai-assistant {
+    background: rgba(11, 23, 57, 0.5);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.ai-assistant h2 {
+    color: var(--electric);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.ai-assistant p {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #c9d1d9;
+}
+
+.chat-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.chat-messages {
+    height: 300px;
+    overflow-y: auto;
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.chat-message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+.chat-message.user {
+    background: var(--electric);
+    color: #0a0f23;
+    margin-left: auto;
+    text-align: right;
+}
+
+.chat-message.ai {
+    background: rgba(255,255,255,0.1);
+    color: #f5f7ff;
+    margin-right: auto;
+}
+
+.chat-input-area {
+    display: flex;
+    gap: 10px;
+}
+
+.chat-input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 8px;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    font-size: 16px;
+}
+
+.chat-input:focus {
+    outline: none;
+    border-color: var(--electric);
+    box-shadow: 0 0 10px rgba(0,212,255,0.3);
+}
+
+.chat-send-btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #00d4ff, #4f9fff);
+    color: #0a0f23;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.chat-send-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(0,212,255,0.45);
+}
+
+.chat-send-btn:active {
+    transform: translateY(0);
+}
+
+/* Responsive for AI Assistant */
+@media (max-width: 768px) {
+    .ai-assistant {
+        padding: 15px;
+    }
+    
+    .chat-messages {
+        height: 250px;
+    }
+    
+    .chat-input-area {
+        flex-direction: column;
+    }
+    
+    .chat-send-btn {
+        width: 100%;
+    }
+}
